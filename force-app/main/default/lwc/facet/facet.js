@@ -79,7 +79,7 @@ export default class Facet extends LightningElement {
   }
 
   /**
-   * @param {CustomEvent<import("../../staticresources/coveoheadless/index").FacetValue>} evt
+   * @param {CustomEvent<import("coveo").FacetValue>} evt
    */
   onSelect(evt) {
     this.facet.toggleSelect(evt.detail);
