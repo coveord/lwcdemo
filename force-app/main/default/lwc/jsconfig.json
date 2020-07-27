@@ -1,0 +1,50 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/searchbox": [
+                "searchbox/searchbox.js"
+            ],
+            "c/result": [
+                "result/result.js"
+            ],
+            "c/resultlist": [
+                "resultlist/resultlist.js"
+            ],
+            "c/facet": [
+                "facet/facet.js"
+            ],
+            "c/facetvalue": [
+                "facetvalue/facetvalue.js"
+            ],
+            "c/pager": [
+                "pager/pager.js"
+            ],
+            "c/summary": [
+                "summary/summary.js"
+            ],
+            "c/sort": [
+                "sort/sort.js"
+            ],
+            "c/pipeline": [
+                "pipeline/pipeline.js"
+            ],
+            "c/searchpage": [
+                "searchpage/searchpage.js"
+            ],
+            "c/pagerbutton": [
+                "pagerbutton/pagerbutton.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}
