@@ -1,11 +1,17 @@
+// @ts-check
 import { LightningElement, api, track } from "lwc";
 
 export default class Pager extends LightningElement {
+  /** @type {number[]} */
   @track currentPages = [];
 
+  /** @type {import("../../staticresources/coveoheadless/index").Pager} */
   pager;
+  /** @type {()=> any} */
   unsubscribe;
+  /** @type {boolean} */
   hasPrevious;
+  /** @type {boolean} */
   hasNext;
   currentPage = 1;
 
@@ -43,6 +49,9 @@ export default class Pager extends LightningElement {
     this.pager.nextPage();
   }
 
+  /**
+   * @param {CustomEvent<number>} event
+   */
   goto(event) {
     this.pager.selectPage(event.detail);
   }

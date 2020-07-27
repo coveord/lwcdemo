@@ -1,8 +1,13 @@
+// @ts-check
 import { LightningElement, api } from "lwc";
 
 export default class Pipeline extends LightningElement {
+  
+  /** @type {import("../../staticresources/coveoheadless/index").Pipeline} */
   pipeline;
+  /** @type {() => any} */
   unsubscribe;
+  /** @type {string} */
   @api querypipeline;
 
   @api
@@ -27,9 +32,5 @@ export default class Pipeline extends LightningElement {
 
   updateState() {
     this.state = this.pipeline.state;
-  }
-
-  get results() {
-    return this.state.results || [];
   }
 }

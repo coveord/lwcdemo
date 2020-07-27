@@ -1,14 +1,25 @@
+// @ts-check
 import { LightningElement, api, track } from "lwc";
 import TributePath from "@salesforce/resourceUrl/tributejs";
+// @ts-ignore
 import { loadScript } from "lightning/platformResourceLoader";
 
 export default class Searchbox extends LightningElement {
-  @track state = {};
+  /** @type {import("../../staticresources/coveoheadless/index").SearchBoxState} */
+  @track state = {
+    redirectTo: "",
+    suggestions: [],
+    value: ""
+  };
+  /** @type {any} */
   @track suggestions = [];
 
+  /** @type {import("../../staticresources/coveoheadless/index").SearchBox} */
   searchBox;
+  /** @type {() => any} */
   unsubscribe;
   tributeLoaded = false;
+  /** @type {any} */
   tribute;
 
   connectedCallback() {
@@ -37,8 +48,13 @@ export default class Searchbox extends LightningElement {
     this.configureTributeJS(input, wrapper, combobox);
   }
 
+  /**
+   * @param {import("lwc").HTMLElementTheGoodPart} input
+   * @param {import("lwc").HTMLElementTheGoodPart} wrapper
+   * @param {import("lwc").HTMLElementTheGoodPart} combobox
+   */
   configureTributeJS(input, wrapper, combobox) {
-    this.tribute = new Tribute({
+    const tributeOptions = {
       values: [],
       searchOpts: {
         skip: true
@@ -52,7 +68,9 @@ export default class Searchbox extends LightningElement {
       itemClass:
         "slds-listbox__item slds-media slds-listbox__option slds-listbox__option_plain slds-media_small",
       noMatchTemplate: ""
-    });
+    };
+    // @ts-ignore
+    this.tribute = new Tribute(tributeOptions);
     this.tribute.attach(input);
 
     input.addEventListener("tribute-replaced", (e) => {
@@ -84,10 +102,16 @@ export default class Searchbox extends LightningElement {
     return this.e;
   }
 
+  /**
+   * @param {InputEvent & {target: {value : string}}} event
+   */
   onChange(event) {
     this.searchBox.updateText(event.target.value);
   }
 
+  /**
+   * @param {KeyboardEvent & {target: {value : string}}} event
+   */
   onKeyup(event) {
     if (event.which === 13) {
       this.searchBox.submit();
@@ -95,12 +119,9 @@ export default class Searchbox extends LightningElement {
     this.searchBox.updateText(event.target.value);
   }
 
-  isLoading() {
-    return this.se;
-  }
-
   updateState() {
     this.state = this.searchBox.state;
+
     this.suggestions = this.state.suggestions.map((s) => s.value);
     if (!this.tribute) {
       return;

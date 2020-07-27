@@ -1,13 +1,20 @@
+// @ts-check
 import { LightningElement, api } from "lwc";
 import HeadlessPath from "@salesforce/resourceUrl/coveoheadless";
+// @ts-ignore
 import { loadScript } from "lightning/platformResourceLoader";
 
 export default class Coveosearch extends LightningElement {
+  /** @type {any} */
   @api flexipageRegionWidth;
+  /** @type {boolean} */
   @api hasResults;
 
+  /** @type {boolean} */
   initialized;
+  /** @type {import("../../staticresources/coveoheadless/index").HeadlessEngine<any>} */
   engine;
+  /** @type {() => any} */
   unsubscribe;
 
   connectedCallback() {
@@ -15,6 +22,9 @@ export default class Coveosearch extends LightningElement {
       return;
     }
 
+    /**
+     * @param {any} e
+     */
     loadScript(this, HeadlessPath + "/browser/headless.js")
       .then(() => this.initializeCoveo())
       .catch((e) => {
@@ -31,6 +41,7 @@ export default class Coveosearch extends LightningElement {
       configuration: CoveoHeadless.HeadlessEngine.getSampleConfiguration(),
       reducers: CoveoHeadless.searchPageReducers
     });
+
     this.unsubscribe = this.engine.subscribe(() => this.updateState());
     this.initialized = true;
 

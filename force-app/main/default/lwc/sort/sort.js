@@ -1,9 +1,13 @@
+// @ts-check
 import { LightningElement, track, api } from "lwc";
 
 export default class Sort extends LightningElement {
-  sort;
-  unsubscribe;
   @track state = {};
+
+  /** @type {import("../../staticresources/coveoheadless/index").Sort} */
+  sort;
+  /** @type {() => any} */
+  unsubscribe;
 
   @api
   set engine(eng) {
@@ -24,6 +28,9 @@ export default class Sort extends LightningElement {
     this.state = this.sort.state;
   }
 
+  /**
+   * @param {CustomEvent<{value: string}>} e
+   */
   handleChange(e) {
     const selected = e.detail.value;
 

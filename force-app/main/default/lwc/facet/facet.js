@@ -1,11 +1,16 @@
+// @ts-check
 import { LightningElement, track, api } from "lwc";
 
 export default class Facet extends LightningElement {
   @track state = {};
+  /** @type {string} */
   @api field;
+  /** @type {string} */
   @api title;
 
+  /** @type {{ sortBy: any; subscribe: any; state: any; canShowMoreValues: any; canShowLessValues: any; toggleSelect: any; showMoreValues: any; showLessValues: any; facetSearch?: { updateText(text: string): void; search(): void; select(value: import("../../staticresources/coveoheadless/api/search/facet-search/api/response").FacetSearchResult): void; readonly state: { ...; }; }; isValueSelected?: (value: import("../../staticresources/coveoheadless/index").FacetValue) => boolean; deselectAll?: () => void; hasActiveValues?: boolean; isSortedBy?: (criterion: import("../../staticresources/coveoheadless/index").FacetSortCriterion) => boolean; }} */
   facet;
+  /** @type {() => any} */
   unsubscribe;
 
   @api
@@ -69,6 +74,9 @@ export default class Facet extends LightningElement {
     return this.values.length !== 0;
   }
 
+  /**
+   * @param {{ detail: any; }} evt
+   */
   onSelect(evt) {
     this.facet.toggleSelect(evt.detail);
   }

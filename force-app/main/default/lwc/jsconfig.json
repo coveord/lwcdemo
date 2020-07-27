@@ -2,6 +2,7 @@
     "compilerOptions": {
         "experimentalDecorators": true,
         "baseUrl": ".",
+        "target": "es2016",
         "paths": {
             "c/searchbox": [
                 "searchbox/searchbox.js"
@@ -40,7 +41,8 @@
     },
     "include": [
         "**/*",
-        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+        "../../../../.sfdx/typings/lwc/**/*.d.ts",
+        "globals.d.ts"
     ],
     "typeAcquisition": {
         "include": [
