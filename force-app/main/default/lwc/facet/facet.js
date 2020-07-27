@@ -2,13 +2,17 @@
 import { LightningElement, track, api } from "lwc";
 
 export default class Facet extends LightningElement {
-  @track state = {};
+  /** @type {import("../../staticresources/coveoheadless/index").FacetState} */
+  @track state = {
+    sortCriterion: "occurrences",
+    values: []
+  };
   /** @type {string} */
   @api field;
   /** @type {string} */
   @api title;
 
-  /** @type {{ sortBy: any; subscribe: any; state: any; canShowMoreValues: any; canShowLessValues: any; toggleSelect: any; showMoreValues: any; showLessValues: any; facetSearch?: { updateText(text: string): void; search(): void; select(value: import("../../staticresources/coveoheadless/api/search/facet-search/api/response").FacetSearchResult): void; readonly state: { ...; }; }; isValueSelected?: (value: import("../../staticresources/coveoheadless/index").FacetValue) => boolean; deselectAll?: () => void; hasActiveValues?: boolean; isSortedBy?: (criterion: import("../../staticresources/coveoheadless/index").FacetSortCriterion) => boolean; }} */
+  /** @type {ReturnType<typeof import("../../staticresources/coveoheadless/index").buildFacet>} */
   facet;
   /** @type {() => any} */
   unsubscribe;
@@ -75,7 +79,7 @@ export default class Facet extends LightningElement {
   }
 
   /**
-   * @param {{ detail: any; }} evt
+   * @param {CustomEvent<import("../../staticresources/coveoheadless/index").FacetValue>} evt
    */
   onSelect(evt) {
     this.facet.toggleSelect(evt.detail);
