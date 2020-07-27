@@ -2,7 +2,7 @@
 import { LightningElement, api, track } from "lwc";
 
 export default class Facetvalue extends LightningElement {
-  /** @type {import("../../staticresources/coveoheadless/index").FacetValue} */
+  /** @type {import("coveo").FacetValue} */
   @api item;
 
   /**

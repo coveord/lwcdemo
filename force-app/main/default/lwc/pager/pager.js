@@ -5,7 +5,7 @@ export default class Pager extends LightningElement {
   /** @type {number[]} */
   @track currentPages = [];
 
-  /** @type {import("../../staticresources/coveoheadless/index").Pager} */
+  /** @type {import("coveo").Pager} */
   pager;
   /** @type {()=> any} */
   unsubscribe;

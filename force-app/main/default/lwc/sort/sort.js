@@ -4,7 +4,7 @@ import { LightningElement, track, api } from "lwc";
 export default class Sort extends LightningElement {
   @track state = {};
 
-  /** @type {import("../../staticresources/coveoheadless/index").Sort} */
+  /** @type {import("coveo").Sort} */
   sort;
   /** @type {() => any} */
   unsubscribe;

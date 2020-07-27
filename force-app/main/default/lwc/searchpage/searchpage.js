@@ -12,7 +12,7 @@ export default class Coveosearch extends LightningElement {
 
   /** @type {boolean} */
   initialized;
-  /** @type {import("../../staticresources/coveoheadless/index").HeadlessEngine<any>} */
+  /** @type {import("coveo").HeadlessEngine<any>} */
   engine;
   /** @type {() => any} */
   unsubscribe;

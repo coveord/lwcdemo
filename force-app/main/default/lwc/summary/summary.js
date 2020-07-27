@@ -4,7 +4,7 @@ import { LightningElement, track, api } from "lwc";
 export default class Summary extends LightningElement {
   @track state = {};
 
-  /** @type {import("../../staticresources/coveoheadless/index").QuerySummary} */
+  /** @type {import("coveo").QuerySummary} */
   querySummary;
   /** @type {() => any} */
   unsubscribe;

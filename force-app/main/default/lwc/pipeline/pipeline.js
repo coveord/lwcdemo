@@ -3,7 +3,7 @@ import { LightningElement, api } from "lwc";
 
 export default class Pipeline extends LightningElement {
   
-  /** @type {import("../../staticresources/coveoheadless/index").Pipeline} */
+  /** @type {import("coveo").Pipeline} */
   pipeline;
   /** @type {() => any} */
   unsubscribe;

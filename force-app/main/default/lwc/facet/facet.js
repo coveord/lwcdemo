@@ -2,7 +2,7 @@
 import { LightningElement, track, api } from "lwc";
 
 export default class Facet extends LightningElement {
-  /** @type {import("../../staticresources/coveoheadless/index").FacetState} */
+  /** @type {import("coveo").FacetState} */
   @track state = {
     sortCriterion: "occurrences",
     values: []
@@ -12,7 +12,7 @@ export default class Facet extends LightningElement {
   /** @type {string} */
   @api title;
 
-  /** @type {ReturnType<typeof import("../../staticresources/coveoheadless/index").buildFacet>} */
+  /** @type {ReturnType<typeof import("coveo").buildFacet>} */
   facet;
   /** @type {() => any} */
   unsubscribe;

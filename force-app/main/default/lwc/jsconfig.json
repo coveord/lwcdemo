@@ -42,7 +42,7 @@
     "include": [
         "**/*",
         "../../../../.sfdx/typings/lwc/**/*.d.ts",
-        "globals.d.ts"
+        "coveo.d.ts",
     ],
     "typeAcquisition": {
         "include": [

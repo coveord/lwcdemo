@@ -4,7 +4,7 @@ import { LightningElement, api, track } from "lwc";
 export default class Resultlist extends LightningElement {
   @track state = {};
 
-  /** @type {import("../../staticresources/coveoheadless/index").ResultList} */
+  /** @type {import("coveo").ResultList} */
   resultList;
   /** @type {() => any} */
   unsubscribe;

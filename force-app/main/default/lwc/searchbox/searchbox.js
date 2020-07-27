@@ -5,7 +5,7 @@ import TributePath from "@salesforce/resourceUrl/tributejs";
 import { loadScript } from "lightning/platformResourceLoader";
 
 export default class Searchbox extends LightningElement {
-  /** @type {import("../../staticresources/coveoheadless/index").SearchBoxState} */
+  /** @type {import("coveo").SearchBoxState} */
   @track state = {
     redirectTo: "",
     suggestions: [],
@@ -14,7 +14,7 @@ export default class Searchbox extends LightningElement {
   /** @type {any} */
   @track suggestions = [];
 
-  /** @type {import("../../staticresources/coveoheadless/index").SearchBox} */
+  /** @type {import("coveo").SearchBox} */
   searchBox;
   /** @type {() => any} */
   unsubscribe;
