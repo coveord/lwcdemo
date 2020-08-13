@@ -1,13 +1,10 @@
 import { Engine } from '../../app/headless-engine';
-import { Controller } from '../controller/headless-controller';
 /** The state relevant to the `ResultList` controller.*/
 export declare type ResultListState = ResultList['state'];
-export declare class ResultList extends Controller {
-    constructor(engine: Engine);
-    /**
-     * @returns The state of the `ResultList` controller.
-     */
-    get state(): {
+export declare type ResultList = ReturnType<typeof buildResultList>;
+export declare const buildResultList: (engine: Engine) => {
+    state: {
         results: import("../..").Result[];
     };
-}
+    subscribe: (listener: () => void) => import("redux").Unsubscribe;
+};

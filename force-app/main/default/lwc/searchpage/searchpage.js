@@ -49,9 +49,7 @@ export default class Coveosearch extends LightningElement {
     setTimeout(() => {
       this.engine.dispatch(
         CoveoHeadless.searchActions.executeSearch(
-          CoveoHeadless.analyticsActions.logGenericSearchEvent({
-            evt: "interfaceLoad"
-          })
+          CoveoHeadless.analyticsActions.logInterfaceLoad()
         )
       );
     }, 100);

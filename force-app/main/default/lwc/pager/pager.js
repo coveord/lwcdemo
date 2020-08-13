@@ -22,7 +22,7 @@ export default class Pager extends LightningElement {
     }
 
     this.e = eng;
-    this.pager = new CoveoHeadless.Pager(this.e);
+    this.pager = CoveoHeadless.buildPager(this.e);
     this.unsubscribe = this.pager.subscribe(() => this.updateState());
   }
 

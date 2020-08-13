@@ -1,6 +1,5 @@
 import { Schema, SchemaValues } from '@coveo/bueno';
 import { Engine } from '../../app/headless-engine';
-import { Controller } from '../controller/headless-controller';
 export interface SearchBoxProps {
     options: SearchBoxOptions;
 }
@@ -17,14 +16,9 @@ export declare type SearchBoxState = SearchBox['state'];
 /**
  * The `SearchBox` headless controller offers a high-level interface for designing a common search box UI controller.
  */
-export declare class SearchBox extends Controller {
-    text: string;
-    private options;
-    constructor(engine: Engine, props?: Partial<SearchBoxProps>);
-    /**
-     * A unique identifier for the controller.
-     */
-    get id(): string;
+export declare type SearchBox = ReturnType<typeof buildSearchBox>;
+export declare const buildSearchBox: (engine: Engine, props?: Partial<SearchBoxProps>) => {
+    id: string;
     /**
      * Updates the search box text value and shows the suggestions for that value.
      * @param value  The string value to update the search box with.
@@ -52,17 +46,13 @@ export declare class SearchBox extends Controller {
      * If the `standalone` option is `false`, triggers a search query.
      */
     submit(): void;
-    /**
-     * @returns The state of the `SearchBox` controller.
-     */
-    get state(): {
+    state: {
         value: string;
         suggestions: {
             value: string;
         }[];
         redirectTo: string | null;
     };
-    private registerQuery;
-    private registerQuerySuggest;
-}
+    subscribe: (listener: () => void) => import("redux").Unsubscribe;
+};
 export {};

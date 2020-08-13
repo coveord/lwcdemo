@@ -7,7 +7,7 @@ import { FacetSortCriterion } from './interfaces/request';
  */
 export declare const registerFacet: import("@reduxjs/toolkit").ActionCreatorWithPayload<FacetRegistrationOptions, string>;
 /**
- * Select a facet value.
+ * Select (unselect) a facet value if unselected (selected).
  */
 export declare const toggleSelectFacetValue: import("@reduxjs/toolkit").ActionCreatorWithPayload<{
     facetId: string;

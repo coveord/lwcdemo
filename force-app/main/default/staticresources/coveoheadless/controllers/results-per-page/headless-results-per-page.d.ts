@@ -1,16 +1,20 @@
 import { Engine } from '../../app/headless-engine';
-import { Controller } from '../controller/headless-controller';
 export interface ResultsPerPageProps {
     initialState: Partial<ResultsPerPageInitialState>;
 }
 export interface ResultsPerPageInitialState {
     numberOfResults: number;
 }
+/**
+ * The ResultsPerPage component allows the end user to choose how many results to display per page.
+ */
+export declare type ResultsPerPage = ReturnType<typeof buildResultsPerPage>;
 /** The state relevant to the `ResultsPerPage` controller.*/
 export declare type ResultsPerPageState = ResultsPerPage['state'];
-export declare class ResultsPerPage extends Controller {
-    private props;
-    constructor(engine: Engine, props?: Partial<ResultsPerPageProps>);
+export declare const buildResultsPerPage: (engine: Engine, props?: Partial<ResultsPerPageProps>) => {
+    state: {
+        numberOfResults: number;
+    };
     /** Updates the number of results to request
      * @param number The number of results.
      */
@@ -19,11 +23,5 @@ export declare class ResultsPerPage extends Controller {
      * @returns boolean
      */
     isSetTo(num: number): boolean;
-    /**
-     * @returns The state of the `ResultsPerPage` controller.
-     */
-    get state(): {
-        numberOfResults: number;
-    };
-    private register;
-}
+    subscribe: (listener: () => void) => import("redux").Unsubscribe;
+};

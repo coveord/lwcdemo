@@ -16,7 +16,7 @@ export default class Resultlist extends LightningElement {
     }
 
     this.e = eng;
-    this.resultList = new CoveoHeadless.ResultList(this.e);
+    this.resultList = CoveoHeadless.buildResultList(this.e);
     this.unsubscribe = this.resultList.subscribe(() => this.updateState());
   }
 

@@ -1,7 +1,6 @@
 import { Engine } from '../../../app/headless-engine';
-import { FacetOptionalParameters } from '../../../features/facets/facet-set/interfaces/options';
-import { FacetSearchRequestOptions } from '../../../features/facets/facet-search-set/facet-search-request-options';
 import { FacetRegistrationOptions } from '../../../features/facets/facet-set/interfaces/options';
+import { FacetSearchRequestOptions } from '../../../features/facets/facet-search-set/facet-search-request-options';
 import { FacetValue } from '../../../features/facets/facet-set/interfaces/response';
 import { FacetSortCriterion } from '../../../features/facets/facet-set/interfaces/request';
 export declare type Facet = ReturnType<typeof buildFacet>;
@@ -9,8 +8,7 @@ export declare type FacetState = Facet['state'];
 export declare type FacetProps = {
     options: FacetOptions;
 };
-export declare type FacetOptions = FacetOptionalParameters & {
-    field: string;
+export declare type FacetOptions = Omit<FacetRegistrationOptions, 'facetId'> & {
     facetId?: string;
     facetSearch?: Partial<FacetSearchRequestOptions>;
 };
@@ -33,8 +31,8 @@ export declare function buildFacet(engine: Engine, props: FacetProps): {
      */
     toggleSelect(selection: FacetValue): void;
     /**
-     * Returns `true` is the passed facet value is selected and `false` otherwise.
-     * @param facetValue The facet value to check.
+     * Returns `true` if the passed facet value is selected and `false` otherwise.
+     * @param {FacetValue} The facet value to check.
      * @returns {boolean}.
      */
     isValueSelected: (value: FacetValue) => boolean;

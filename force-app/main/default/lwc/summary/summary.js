@@ -16,7 +16,7 @@ export default class Summary extends LightningElement {
     }
 
     this.e = eng;
-    this.querySummary = new CoveoHeadless.QuerySummary(this.e);
+    this.querySummary = CoveoHeadless.buildQuerySummary(this.e);
     this.unsubscribe = this.querySummary.subscribe(() => this.updateState());
   }
 

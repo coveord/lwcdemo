@@ -2,7 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var crossFetch = require('cross-fetch');
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var fetch$1 = _interopDefault(require('cross-fetch'));
 
 function n(n){for(var t=arguments.length,r=Array(t>1?t-1:0),e=1;e<t;e++)r[e-1]=arguments[e];throw Error("[Immer] minified error nr: "+n+(r.length?" "+r.join(","):"")+". Find the full error at: https://bit.ly/3cXEKWf")}function t(n){return !!n&&!!n[L]}function r(n){return !!n&&(function(n){if(!n||"object"!=typeof n)return !1;var t=Object.getPrototypeOf(n);return !t||t===Object.prototype}(n)||Array.isArray(n)||!!n[H]||!!n.constructor[H]||s(n)||v(n))}function i(n,t,r){void 0===r&&(r=!1),0===o(n)?(r?Object.keys:Y)(n).forEach((function(e){r&&"symbol"==typeof e||t(e,n[e],n);})):n.forEach((function(r,e){return t(e,r,n)}));}function o(n){var t=n[L];return t?t.i>3?t.i-4:t.i:Array.isArray(n)?1:s(n)?2:v(n)?3:0}function u(n,t){return 2===o(n)?n.has(t):Object.prototype.hasOwnProperty.call(n,t)}function a(n,t){return 2===o(n)?n.get(t):n[t]}function f(n,t,r){var e=o(n);2===e?n.set(t,r):3===e?(n.delete(t),n.add(r)):n[t]=r;}function c(n,t){return n===t?0!==n||1/n==1/t:n!=n&&t!=t}function s(n){return W&&n instanceof Map}function v(n){return X&&n instanceof Set}function p(n){return n.o||n.t}function l(n){if(Array.isArray(n))return n.slice();var t=Z(n);delete t[L];for(var r=Y(t),e=0;e<r.length;e++){var i=r[e],o=t[i];!1===o.writable&&(o.writable=!0,o.configurable=!0),(o.get||o.set)&&(t[i]={configurable:!0,writable:!0,enumerable:o.enumerable,value:n[i]});}return Object.create(Object.getPrototypeOf(n),t)}function d(n,e){b(n)||t(n)||!r(n)||(o(n)>1&&(n.set=n.add=n.clear=n.delete=h),Object.freeze(n),e&&i(n,(function(n,t){return d(t,!0)}),!0));}function h(){n(2);}function b(n){return null==n||"object"!=typeof n||Object.isFrozen(n)}function y(t){var r=nn[t];return r||n(19,t),r}function m(n,t){nn[n]=t;}function _(){return G}function j(n,t){t&&(y("Patches"),n.u=[],n.s=[],n.v=t);}function g(n){O(n),n.p.forEach(S),n.p=null;}function O(n){n===G&&(G=n.l);}function w(n){return G={p:[],l:G,h:n,m:!0,_:0}}function S(n){var t=n[L];0===t.i||1===t.i?t.j():t.g=!0;}function P(t,e){e._=e.p.length;var i=e.p[0],o=void 0!==t&&t!==i;return e.h.O||y("ES5").S(e,t,o),o?(i[L].P&&(g(e),n(4)),r(t)&&(t=M(e,t),e.l||x(e,t)),e.u&&y("Patches").M(i[L],t,e.u,e.s)):t=M(e,i,[]),g(e),e.u&&e.v(e.u,e.s),t!==B?t:void 0}function M(n,t,r){if(b(t))return t;var e=t[L];if(!e)return i(t,(function(i,o){return A(n,e,t,i,o,r)}),!0),t;if(e.A!==n)return t;if(!e.P)return x(n,e.t,!0),e.t;if(!e.I){e.I=!0,e.A._--;var o=4===e.i||5===e.i?e.o=l(e.k):e.o;i(o,(function(t,i){return A(n,e,o,t,i,r)})),x(n,o,!1),r&&n.u&&y("Patches").R(e,r,n.u,n.s);}return e.o}function A(e,i,o,a,c,s){if(t(c)){var v=M(e,c,s&&i&&3!==i.i&&!u(i.D,a)?s.concat(a):void 0);if(f(o,a,v),!t(v))return;e.m=!1;}if(r(c)&&!b(c)){if(!e.h.N&&e._<1)return;M(e,c),i&&i.A.l||x(e,c);}}function x(n,t,r){void 0===r&&(r=!1),n.h.N&&n.m&&d(t,r);}function z(n,t){var r=n[L];return (r?p(r):n)[t]}function I(n){n.P||(n.P=!0,n.l&&I(n.l));}function E(n){n.o||(n.o=l(n.t));}function k(n,t,r){var e=s(t)?y("MapSet").T(t,r):v(t)?y("MapSet").F(t,r):n.O?function(n,t){var r=Array.isArray(n),e={i:r?1:0,A:t?t.A:_(),P:!1,I:!1,D:{},l:t,t:n,k:null,o:null,j:null,C:!1},i=e,o=tn;r&&(i=[e],o=rn);var u=Proxy.revocable(i,o),a=u.revoke,f=u.proxy;return e.k=f,e.j=a,f}(t,r):y("ES5").J(t,r);return (r?r.A:_()).p.push(e),e}function R(e){return t(e)||n(22,e),function n(t){if(!r(t))return t;var e,u=t[L],c=o(t);if(u){if(!u.P&&(u.i<4||!y("ES5").K(u)))return u.t;u.I=!0,e=D(t,c),u.I=!1;}else e=D(t,c);return i(e,(function(t,r){u&&a(u.t,t)===r||f(e,t,n(r));})),3===c?new Set(e):e}(e)}function D(n,t){switch(t){case 2:return new Map(n);case 3:return Array.from(n)}return l(n)}function N(){function r(n,t){var r=s[n];return r?r.enumerable=t:s[n]=r={configurable:!0,enumerable:t,get:function(){var t=this[L];return tn.get(t,n)},set:function(t){var r=this[L];tn.set(r,n,t);}},r}function e(n){for(var t=n.length-1;t>=0;t--){var r=n[t][L];if(!r.P)switch(r.i){case 5:a(r)&&I(r);break;case 4:o(r)&&I(r);}}}function o(n){for(var t=n.t,r=n.k,e=Y(r),i=e.length-1;i>=0;i--){var o=e[i];if(o!==L){var a=t[o];if(void 0===a&&!u(t,o))return !0;var f=r[o],s=f&&f[L];if(s?s.t!==a:!c(f,a))return !0}}var v=!!t[L];return e.length!==Y(t).length+(v?0:1)}function a(n){var t=n.k;if(t.length!==n.t.length)return !0;var r=Object.getOwnPropertyDescriptor(t,t.length-1);return !(!r||r.get)}var s={};m("ES5",{J:function(n,t){var e=Array.isArray(n),i=function(n,t){var e=Z(t);n&&delete e.length,delete e[L];for(var i=Y(e),o=0;o<i.length;o++){var u=i[o];e[u]=r(u,n||!!e[u].enumerable);}if(n){var a=Array(t.length);return Object.defineProperties(a,e),a}return Object.create(Object.getPrototypeOf(t),e)}(e,n),o={i:e?5:4,A:t?t.A:_(),P:!1,I:!1,D:{},l:t,t:n,k:i,o:null,g:!1,C:!1};return Object.defineProperty(i,L,{value:o,writable:!0}),i},S:function(n,r,o){o?t(r)&&r[L].A===n&&e(n.p):(n.u&&function n(t){if(t&&"object"==typeof t){var r=t[L];if(r){var e=r.t,o=r.k,f=r.D,c=r.i;if(4===c)i(o,(function(t){t!==L&&(void 0!==e[t]||u(e,t)?f[t]||n(o[t]):(f[t]=!0,I(r)));})),i(e,(function(n){void 0!==o[n]||u(o,n)||(f[n]=!1,I(r));}));else if(5===c){if(a(r)&&(I(r),f.length=!0),o.length<e.length)for(var s=o.length;s<e.length;s++)f[s]=!1;else for(var v=e.length;v<o.length;v++)f[v]=!0;for(var p=Math.min(o.length,e.length),l=0;l<p;l++)void 0===f[l]&&n(o[l]);}}}}(n.p[0]),e(n.p));},K:function(n){return 4===n.i?o(n):a(n)}});}var $,G,U="undefined"!=typeof Symbol&&"symbol"==typeof Symbol("x"),W="undefined"!=typeof Map,X="undefined"!=typeof Set,q="undefined"!=typeof Proxy&&void 0!==Proxy.revocable&&"undefined"!=typeof Reflect,B=U?Symbol("immer-nothing"):(($={})["immer-nothing"]=!0,$),H=U?Symbol("immer-draftable"):"__$immer_draftable",L=U?Symbol("immer-state"):"__$immer_state",Y="undefined"!=typeof Reflect&&Reflect.ownKeys?Reflect.ownKeys:void 0!==Object.getOwnPropertySymbols?function(n){return Object.getOwnPropertyNames(n).concat(Object.getOwnPropertySymbols(n))}:Object.getOwnPropertyNames,Z=Object.getOwnPropertyDescriptors||function(n){var t={};return Y(n).forEach((function(r){t[r]=Object.getOwnPropertyDescriptor(n,r);})),t},nn={},tn={get:function(n,t){if(t===L)return n;var e=p(n);if(!u(e,t))return function(n,t,r){if(r in t)for(var e=Object.getPrototypeOf(t);e;){var i,o=Object.getOwnPropertyDescriptor(e,r);if(o)return "value"in o?o.value:null===(i=o.get)||void 0===i?void 0:i.call(n.k);e=Object.getPrototypeOf(e);}}(n,e,t);var i=e[t];return n.I||!r(i)?i:i===z(n.t,t)?(E(n),n.o[t]=k(n.A.h,i,n)):i},has:function(n,t){return t in p(n)},ownKeys:function(n){return Reflect.ownKeys(p(n))},set:function(n,t,r){if(n.D[t]=!0,!n.P){if(c(r,z(p(n),t))&&void 0!==r)return !0;E(n),I(n);}return n.o[t]=r,!0},deleteProperty:function(n,t){return void 0!==z(n.t,t)||t in n.t?(n.D[t]=!1,E(n),I(n)):delete n.D[t],n.o&&delete n.o[t],!0},getOwnPropertyDescriptor:function(n,t){var r=p(n),e=Reflect.getOwnPropertyDescriptor(r,t);return e?{writable:!0,configurable:1!==n.i||"length"!==t,enumerable:e.enumerable,value:r[t]}:e},defineProperty:function(){n(11);},getPrototypeOf:function(n){return Object.getPrototypeOf(n.t)},setPrototypeOf:function(){n(12);}},rn={};i(tn,(function(n,t){rn[n]=function(){return arguments[0]=arguments[0][0],t.apply(this,arguments)};})),rn.deleteProperty=function(t,r){return tn.deleteProperty.call(this,t[0],r)},rn.set=function(t,r,e){return tn.set.call(this,t[0],r,e,t[0])};var en=function(){function e(n){this.O=q,this.N="production"!=="production","boolean"==typeof(null==n?void 0:n.useProxies)&&this.setUseProxies(n.useProxies),"boolean"==typeof(null==n?void 0:n.autoFreeze)&&this.setAutoFreeze(n.autoFreeze),this.produce=this.produce.bind(this),this.produceWithPatches=this.produceWithPatches.bind(this);}var i=e.prototype;return i.produce=function(t,e,i){if("function"==typeof t&&"function"!=typeof e){var o=e;e=t;var u=this;return function(n){var t=this;void 0===n&&(n=o);for(var r=arguments.length,i=Array(r>1?r-1:0),a=1;a<r;a++)i[a-1]=arguments[a];return u.produce(n,(function(n){var r;return (r=e).call.apply(r,[t,n].concat(i))}))}}var a;if("function"!=typeof e&&n(6),void 0!==i&&"function"!=typeof i&&n(7),r(t)){var f=w(this),c=k(this,t,void 0),s=!0;try{a=e(c),s=!1;}finally{s?g(f):O(f);}return "undefined"!=typeof Promise&&a instanceof Promise?a.then((function(n){return j(f,i),P(n,f)}),(function(n){throw g(f),n})):(j(f,i),P(a,f))}if(!t||"object"!=typeof t){if((a=e(t))===B)return;return void 0===a&&(a=t),this.N&&d(a,!0),a}n(21,t);},i.produceWithPatches=function(n,t){var r,e,i=this;return "function"==typeof n?function(t){for(var r=arguments.length,e=Array(r>1?r-1:0),o=1;o<r;o++)e[o-1]=arguments[o];return i.produceWithPatches(t,(function(t){return n.apply(void 0,[t].concat(e))}))}:[this.produce(n,t,(function(n,t){r=n,e=t;})),r,e]},i.createDraft=function(e){r(e)||n(8),t(e)&&(e=R(e));var i=w(this),o=k(this,e,void 0);return o[L].C=!0,O(i),o},i.finishDraft=function(t,r){var e=t&&t[L];var i=e.A;return j(i,r),P(void 0,i)},i.setAutoFreeze=function(n){this.N=n;},i.setUseProxies=function(t){t&&!q&&n(20),this.O=t;},i.applyPatches=function(n,r){var e;for(e=r.length-1;e>=0;e--){var i=r[e];if(0===i.path.length&&"replace"===i.op){n=i.value;break}}var o=y("Patches").$;return t(n)?o(n,r):this.produce(n,(function(n){return o(n,r.slice(e+1))}))},e}(),on=new en,un=on.produce,an=on.produceWithPatches.bind(on),fn=on.setAutoFreeze.bind(on),cn=on.setUseProxies.bind(on),sn=on.applyPatches.bind(on),vn=on.createDraft.bind(on),pn=on.finishDraft.bind(on);
 
@@ -445,6 +447,56 @@ function combineReducers(reducers) {
   };
 }
 
+function bindActionCreator(actionCreator, dispatch) {
+  return function () {
+    return dispatch(actionCreator.apply(this, arguments));
+  };
+}
+/**
+ * Turns an object whose values are action creators, into an object with the
+ * same keys, but with every function wrapped into a `dispatch` call so they
+ * may be invoked directly. This is just a convenience method, as you can call
+ * `store.dispatch(MyActionCreators.doSomething())` yourself just fine.
+ *
+ * For convenience, you can also pass an action creator as the first argument,
+ * and get a dispatch wrapped function in return.
+ *
+ * @param {Function|Object} actionCreators An object whose values are action
+ * creator functions. One handy way to obtain it is to use ES6 `import * as`
+ * syntax. You may also pass a single function.
+ *
+ * @param {Function} dispatch The `dispatch` function available on your Redux
+ * store.
+ *
+ * @returns {Function|Object} The object mimicking the original object, but with
+ * every action creator wrapped into the `dispatch` call. If you passed a
+ * function as `actionCreators`, the return value will also be a single
+ * function.
+ */
+
+
+function bindActionCreators(actionCreators, dispatch) {
+  if (typeof actionCreators === 'function') {
+    return bindActionCreator(actionCreators, dispatch);
+  }
+
+  if (typeof actionCreators !== 'object' || actionCreators === null) {
+    throw new Error("bindActionCreators expected an object or a function, instead received " + (actionCreators === null ? 'null' : typeof actionCreators) + ". " + "Did you write \"import ActionCreators from\" instead of \"import * as ActionCreators from\"?");
+  }
+
+  var boundActionCreators = {};
+
+  for (var key in actionCreators) {
+    var actionCreator = actionCreators[key];
+
+    if (typeof actionCreator === 'function') {
+      boundActionCreators[key] = bindActionCreator(actionCreator, dispatch);
+    }
+  }
+
+  return boundActionCreators;
+}
+
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -571,6 +623,16 @@ function applyMiddleware() {
     };
   };
 }
+
+var redux = /*#__PURE__*/Object.freeze({
+	__proto__: null,
+	__DO_NOT_USE__ActionTypes: ActionTypes,
+	applyMiddleware: applyMiddleware,
+	bindActionCreators: bindActionCreators,
+	combineReducers: combineReducers,
+	compose: compose,
+	createStore: createStore
+});
 
 function defaultEqualityCheck(a, b) {
   return a === b;
@@ -1613,6 +1675,8 @@ const updateBasicConfiguration = createAction('configuration/updateBasicConfigur
  */
 const updateSearchConfiguration = createAction('configuration/updateSearchConfiguration', (payload) => validatePayloadSchema(payload, {
     searchApiBaseUrl: new StringValue({ url: true, emptyAllowed: false }),
+    pipeline: new StringValue({ default: 'default' }),
+    searchHub: new StringValue({ default: 'default' }),
 }));
 /**
  * Renew the accessToken specified in the global headless engine configuration.
@@ -1641,7 +1705,7 @@ var configurationActions = /*#__PURE__*/Object.freeze({
 
 class PlatformClient {
     static async call(options) {
-        const response = await crossFetch.fetch(options.url, {
+        const response = await fetch$1(options.url, {
             method: options.method,
             headers: {
                 'Content-Type': options.contentType,
@@ -1688,18 +1752,19 @@ const searchRequestParams = (state) => {
         facets: getFacets(state),
         context: state.context.contextValues,
         enableDidYouMean: state.didYouMean.enableDidYouMean,
+        fieldsToInclude: state.fields.fieldsToInclude,
         pipeline: state.pipeline,
+        searchHub: state.searchHub,
     };
 };
 function getFacets(state) {
-    return [...getFacetRequests(state), ...getRangeFacetRequests(state)];
+    return [
+        ...getFacetRequests(state.facetSet),
+        ...getFacetRequests(state.numericFacetSet),
+        ...getFacetRequests(state.dateFacetSet),
+    ];
 }
-function getFacetRequests(state) {
-    const requests = state.facetSet;
-    return Object.keys(requests).map((id) => requests[id]);
-}
-function getRangeFacetRequests(state) {
-    const requests = state.rangeFacetSet;
+function getFacetRequests(requests) {
     return Object.keys(requests).map((id) => requests[id]);
 }
 
@@ -1727,6 +1792,7 @@ const planRequestParams = (state) => ({
     ...getOrganizationIdParam(state),
     context: state.context.contextValues,
     pipeline: state.pipeline,
+    searchHub: state.searchHub,
 });
 
 const querySuggestRequestParams = (id, state) => ({
@@ -1747,6 +1813,14 @@ const querySuggestRequestParams = (id, state) => ({
      * Specifies the name of the query pipeline to use for the query. If not specified, the default query pipeline will be used.
      */
     pipeline: state.pipeline,
+    /**
+     * The first level of origin of the request, typically the identifier of the graphical search interface from which the request originates.
+     * Coveo Machine Learning models use this information to provide contextually relevant output.
+     * Notes:
+     *    This parameter will be overridden if the search request is authenticated by a search token that enforces a specific searchHub.
+     *    When logging a Search usage analytics event for a query, the originLevel1 field of that event should be set to the value of the searchHub search request parameter.
+     */
+    searchHub: state.searchHub,
 });
 
 class SearchAPIClient {
@@ -1850,10 +1924,8 @@ const makeHistory = (state) => ({
     future: [],
 });
 const ActionCreators = {
-    undo: () => createAction('@@undoable/UNDO'),
-    redo: () => ({
-        type: ActionTypes$1.REDO,
-    }),
+    undo: () => createAction(ActionTypes$1.UNDO),
+    redo: () => createAction(ActionTypes$1.REDO),
 };
 const undo = (state) => {
     const { past, present, future } = state;
@@ -1889,7 +1961,7 @@ const updateHistory = (state, emptyState, reducer, action) => {
     }
     // Small special twist on the documented/standard redux undo recipe
     // We want to make the "actual first valid initial state" the first one that ends up being different from the "empty state" passed into undoable
-    // This allows for slices to register themselves dynamically (Concret example: facet-slice).
+    // This allows for slices to register themselves dynamically (Concrete example: facet-slice).
     if (present === emptyState.present) {
         return makeHistory(newPresent);
     }
@@ -1985,6 +2057,9 @@ var AnalyticsType;
 const makeSearchActionType = () => ({
     analyticsType: AnalyticsType.Search,
 });
+const makeClickActionType = () => ({
+    analyticsType: AnalyticsType.Click,
+});
 /**
  * Log generic search event
  */
@@ -1995,13 +2070,46 @@ const logGenericSearchEvent = createAsyncThunk('analytics/generic/search', async
     await configureAnalytics(state).logSearchEvent(evt, meta);
     return makeSearchActionType();
 });
+/**
+ * Log interface load
+ */
+const logInterfaceLoad = createAsyncThunk('analytics/interface/load', async (_, { getState }) => {
+    const state = searchPageState(getState);
+    await configureAnalytics(state).logInterfaceLoad();
+    return makeSearchActionType();
+});
+const partialDocumentInformation = (result, state) => {
+    const resultIndex = state.search.response.results.findIndex(({ uniqueId }) => result.uniqueId === uniqueId);
+    return {
+        collectionName: result.raw['collection'] || 'default',
+        documentAuthor: result.raw['author'],
+        documentPosition: resultIndex + 1,
+        documentTitle: result.title,
+        documentUri: result.uri,
+        documentUriHash: result.raw['urihash'],
+        documentUrl: result.clickUri,
+        rankingModifier: result.rankingModifier || '',
+        sourceName: result.raw['source'],
+        queryPipeline: state.pipeline,
+    };
+};
+const documentIdentifier = (result) => {
+    return {
+        contentIDKey: '@permanentid',
+        contentIDValue: result.raw.permanentid,
+    };
+};
 
 var analyticsActions = /*#__PURE__*/Object.freeze({
 	__proto__: null,
 	searchPageState: searchPageState,
 	get AnalyticsType () { return AnalyticsType; },
 	makeSearchActionType: makeSearchActionType,
-	logGenericSearchEvent: logGenericSearchEvent
+	makeClickActionType: makeClickActionType,
+	logGenericSearchEvent: logGenericSearchEvent,
+	logInterfaceLoad: logInterfaceLoad,
+	partialDocumentInformation: partialDocumentInformation,
+	documentIdentifier: documentIdentifier
 });
 
 const snapshot = createAction('history/snapshot');
@@ -2133,12 +2241,14 @@ const shouldReExecuteTheQueryWithCorrections = (state, res) => {
 const extractHistory = (state) => ({
     context: state.context,
     facetSet: state.facetSet,
-    rangeFacetSet: state.rangeFacetSet,
+    numericFacetSet: state.numericFacetSet,
+    dateFacetSet: state.dateFacetSet,
     pagination: state.pagination,
     query: state.query,
     querySet: state.querySet,
     sortCriteria: state.sortCriteria,
     pipeline: state.pipeline,
+    searchHub: state.searchHub,
 });
 
 var searchActions = /*#__PURE__*/Object.freeze({
@@ -2212,6 +2322,8 @@ class HeadlessEngine {
             accessToken: 'xx564559b1-0045-48e1-953c-3addd1ee4457',
             search: {
                 searchApiBaseUrl: 'https://platform.cloud.coveo.com/rest/search',
+                pipeline: 'default',
+                searchHub: 'default',
             },
         };
     }
@@ -2717,7 +2829,7 @@ const sortCriteriaReducer = createReducer(getSortCriteriaInitialState(), (builde
  */
 const registerFacet = createAction('facet/register');
 /**
- * Select a facet value.
+ * Select (unselect) a facet value if unselected (selected).
  */
 const toggleSelectFacetValue = createAction('facet/selectValue');
 /**
@@ -3013,41 +3125,6 @@ const contextReducer = createReducer(getContextInitialState(), (builder) => {
     });
 });
 
-/**
- * Register a range facet in the range facet set.
- * @param {RangeFacetRegistrationOptions} RangeFacetRegistrationOptions The options to register the facet with.
- */
-const registerRangeFacet = createAction('rangeFacet/register');
-
-function getRangeFacetSetInitialState() {
-    return {};
-}
-const rangeFacetSetReducer = createReducer(getRangeFacetSetInitialState(), (builder) => {
-    builder
-        .addCase(registerRangeFacet, (state, action) => {
-        const { payload } = action;
-        const { facetId } = payload;
-        if (facetId in state) {
-            return;
-        }
-        state[facetId] = buildRangeFacetRequest(payload);
-    })
-        .addCase(change.fulfilled, (_, action) => action.payload.rangeFacetSet);
-});
-function buildRangeFacetRequest(config) {
-    return {
-        currentValues: [],
-        isFieldExpanded: false,
-        preventAutoSelect: false,
-        freezeCurrentValues: false,
-        filterFacetCount: false,
-        injectionDepth: 1000,
-        numberOfValues: 8,
-        sortCriteria: 'ascending',
-        ...config,
-    };
-}
-
 const setPipeline = createAction('pipeline/set', (payload) => validatePayloadValue(payload, new StringValue({ required: true, emptyAllowed: true })));
 
 var pipelineActions = /*#__PURE__*/Object.freeze({
@@ -3059,18 +3136,179 @@ const getPipelineInitialState = () => '';
 const pipelineReducer = createReducer(getPipelineInitialState(), (builder) => {
     builder
         .addCase(setPipeline, (_, action) => action.payload)
-        .addCase(change.fulfilled, (_, action) => action.payload.pipeline);
+        .addCase(change.fulfilled, (_, action) => action.payload.pipeline)
+        .addCase(updateSearchConfiguration, (_, action) => action.payload.pipeline);
+});
+
+/**
+ * Register a date facet.
+ * @param {DateFacetRegistrationOptions} DateFacetRegistrationOptions The options to register the facet with.
+ */
+const registerDateFacet = createAction('dateFacet/register');
+/**
+ * Select (unselect) a date facet value if unselected (selected).
+ */
+const toggleSelectDateFacetValue = createAction('dateFacet/selectValue');
+
+function registerRangeFacet(state, request) {
+    const { facetId } = request;
+    if (facetId in state) {
+        return;
+    }
+    state[facetId] = request;
+}
+function toggleSelectRangeValue(state, facetId, selection) {
+    const request = state[facetId];
+    if (!request) {
+        return;
+    }
+    const value = findRange(request.currentValues, selection);
+    if (!value) {
+        return;
+    }
+    const isSelected = value.state === 'selected';
+    value.state = isSelected ? 'idle' : 'selected';
+    request.preventAutoSelect = true;
+}
+function onRangeFacetRequestFulfilled(state, facets, convert) {
+    facets.forEach((facetResponse) => {
+        const id = facetResponse.facetId;
+        const facetRequest = state[id];
+        if (!facetRequest) {
+            return;
+        }
+        const values = convert(facetResponse.values);
+        facetRequest.currentValues = values;
+        facetRequest.preventAutoSelect = false;
+    });
+}
+function findRange(values, value) {
+    const { start, end, endInclusive } = value;
+    return values.find((range) => range.start === start &&
+        range.end === end &&
+        range.endInclusive === endInclusive);
+}
+
+function getDateFacetSetInitialState() {
+    return {};
+}
+const dateFacetSetReducer = createReducer(getDateFacetSetInitialState(), (builder) => {
+    builder
+        .addCase(registerDateFacet, (state, action) => {
+        const { payload } = action;
+        const request = buildDateFacetRequest(payload);
+        registerRangeFacet(state, request);
+    })
+        .addCase(change.fulfilled, (_, action) => action.payload.dateFacetSet)
+        .addCase(toggleSelectDateFacetValue, (state, action) => {
+        const { facetId, selection } = action.payload;
+        toggleSelectRangeValue(state, facetId, selection);
+    })
+        .addCase(executeSearch.fulfilled, (state, action) => {
+        const facets = action.payload.response.facets;
+        onRangeFacetRequestFulfilled(state, facets, convertToRangeRequests);
+    });
+});
+function buildDateFacetRequest(config) {
+    return {
+        currentValues: [],
+        preventAutoSelect: false,
+        filterFacetCount: false,
+        injectionDepth: 1000,
+        numberOfValues: 8,
+        sortCriteria: 'ascending',
+        type: 'dateRange',
+        ...config,
+    };
+}
+function convertToRangeRequests(values) {
+    return values.map((value) => {
+        const { numberOfResults, ...rest } = value;
+        return rest;
+    });
+}
+
+/**
+ * Register a numeric facet.
+ * @param {NumericFacetRegistrationOptions} NumericFacetRegistrationOptions The options to register the facet with.
+ */
+const registerNumericFacet = createAction('numericFacet/register');
+/**
+ * Select (unselect) a numeric facet value if unselected (selected).
+ */
+const toggleSelectNumericFacetValue = createAction('numericFacet/selectValue');
+
+var numericFacetActions = /*#__PURE__*/Object.freeze({
+	__proto__: null,
+	registerNumericFacet: registerNumericFacet,
+	toggleSelectNumericFacetValue: toggleSelectNumericFacetValue
+});
+
+function getNumericFacetSetInitialState() {
+    return {};
+}
+const numericFacetSetReducer = createReducer(getNumericFacetSetInitialState(), (builder) => {
+    builder
+        .addCase(registerNumericFacet, (state, action) => {
+        const { payload } = action;
+        const request = buildNumericFacetRequest(payload);
+        registerRangeFacet(state, request);
+    })
+        .addCase(change.fulfilled, (_, action) => action.payload.numericFacetSet)
+        .addCase(toggleSelectNumericFacetValue, (state, action) => {
+        const { facetId, selection } = action.payload;
+        toggleSelectRangeValue(state, facetId, selection);
+    })
+        .addCase(executeSearch.fulfilled, (state, action) => {
+        const facets = action.payload.response.facets;
+        onRangeFacetRequestFulfilled(state, facets, convertToRangeRequests$1);
+    });
+});
+function buildNumericFacetRequest(config) {
+    return {
+        currentValues: [],
+        preventAutoSelect: false,
+        filterFacetCount: false,
+        injectionDepth: 1000,
+        numberOfValues: 8,
+        sortCriteria: 'ascending',
+        type: 'numericalRange',
+        ...config,
+    };
+}
+function convertToRangeRequests$1(values) {
+    return values.map((value) => {
+        const { numberOfResults, ...rest } = value;
+        return rest;
+    });
+}
+
+const setSearchHub = createAction('searchHub/set', (payload) => validatePayloadValue(payload, new StringValue({ required: true, emptyAllowed: true })));
+
+var searchHubActions = /*#__PURE__*/Object.freeze({
+	__proto__: null,
+	setSearchHub: setSearchHub
+});
+
+const getSearchHubInitialState = () => '';
+const searchHubReducer = createReducer(getSearchHubInitialState(), (builder) => {
+    builder
+        .addCase(setSearchHub, (_, action) => action.payload)
+        .addCase(change.fulfilled, (_, action) => action.payload.searchHub)
+        .addCase(updateSearchConfiguration, (_, action) => action.payload.searchHub);
 });
 
 const getHistoryEmptyState = () => ({
     context: getContextInitialState(),
     facetSet: getFacetSetInitialState(),
-    rangeFacetSet: getRangeFacetSetInitialState(),
+    dateFacetSet: getDateFacetSetInitialState(),
+    numericFacetSet: getNumericFacetSetInitialState(),
     pagination: getPaginationInitialState(),
     query: getQueryInitialState(),
     sortCriteria: getSortCriteriaInitialState(),
     querySet: getQuerySetInitialState(),
     pipeline: getPipelineInitialState(),
+    searchHub: getSearchHubInitialState(),
 });
 const historyReducer = createReducer(getHistoryEmptyState(), (builder) => {
     builder.addCase(snapshot, (state, action) => isEqual(state, action.payload) ? undefined : action.payload);
@@ -3078,20 +3316,24 @@ const historyReducer = createReducer(getHistoryEmptyState(), (builder) => {
 const isEqual = (current, next) => {
     return (isContextEqual(current.context, next.context) &&
         isFacetsEqual(current.facetSet, next.facetSet) &&
-        isRangeFacetsEqual(current.rangeFacetSet, next.rangeFacetSet) &&
+        isDateFacetsEqual(current.dateFacetSet, next.dateFacetSet) &&
+        isNumericFacetsEqual(current.numericFacetSet, next.numericFacetSet) &&
         isPaginationEqual(current.pagination, next.pagination) &&
         isQueryEqual(current.query, next.query) &&
         isSortEqual(current, next) &&
-        isPipelineEqual(current.pipeline, next.pipeline));
+        isPipelineEqual(current.pipeline, next.pipeline) &&
+        isSearchHubEqual(current.searchHub, next.searchHub));
 };
 const isContextEqual = (current, next) => JSON.stringify(current.contextValues) === JSON.stringify(next.contextValues);
 const isFacetsEqual = (current, next) => JSON.stringify(current) === JSON.stringify(next);
-const isRangeFacetsEqual = (current, next) => JSON.stringify(current) === JSON.stringify(next);
+const isDateFacetsEqual = (current, next) => JSON.stringify(current) === JSON.stringify(next);
+const isNumericFacetsEqual = (current, next) => JSON.stringify(current) === JSON.stringify(next);
 const isPaginationEqual = (current, next) => current.firstResult === next.firstResult &&
     current.numberOfResults === next.numberOfResults;
 const isQueryEqual = (current, next) => current.q === next.q;
 const isSortEqual = (current, next) => current.sortCriteria === next.sortCriteria;
 const isPipelineEqual = (current, next) => current === next;
+const isSearchHubEqual = (current, next) => current === next;
 
 const emptyCorrection = () => ({
     correctedQuery: '',
@@ -3181,13 +3423,38 @@ function buildNullFacetSearchResponse() {
     };
 }
 
+const nonEmptyString$1 = new StringValue({ required: true, emptyAllowed: false });
+const nonEmptyArray$1 = new ArrayValue({
+    each: nonEmptyString$1,
+    required: true,
+});
+const registerFieldsToInclude = createAction('fields/registerFieldsToInclude', (payload) => validatePayloadValue(payload, nonEmptyArray$1));
+
+const getFieldsInitialState = () => ({
+    fieldsToInclude: [
+        'author',
+        'language',
+        'urihash',
+        'objecttype',
+        'collection',
+        'source',
+        'permanentid',
+    ],
+});
+const fieldsReducer = createReducer(getFieldsInitialState(), (builder) => builder.addCase(registerFieldsToInclude, (state, action) => {
+    state.fieldsToInclude = [
+        ...new Set(state.fieldsToInclude.concat(action.payload)),
+    ];
+}));
+
 /**
  * Map of reducers that make up the SearchPageState.
  */
 const searchPageReducers = {
     configuration: configurationReducer,
     facetSet: facetSetReducer,
-    rangeFacetSet: rangeFacetSetReducer,
+    dateFacetSet: dateFacetSetReducer,
+    numericFacetSet: numericFacetSetReducer,
     facetSearchSet: facetSearchSetReducer,
     query: queryReducer,
     querySet: querySetReducer,
@@ -3199,7 +3466,9 @@ const searchPageReducers = {
     context: contextReducer,
     history: undoable(historyReducer, getHistoryEmptyState()),
     didYouMean: didYouMeanReducer,
+    fields: fieldsReducer,
     pipeline: pipelineReducer,
+    searchHub: searchHubReducer,
 };
 
 class Controller {
@@ -3284,98 +3553,89 @@ const optionsSchema = new Schema({
      */
     isStandalone: new BooleanValue({ default: false }),
 });
-/**
- * The `SearchBox` headless controller offers a high-level interface for designing a common search box UI controller.
- */
-class SearchBox extends Controller {
-    constructor(engine, props = {}) {
-        super(engine);
-        this.text = '';
-        this.options = optionsSchema.validate(props.options);
-        this.registerQuery();
-        this.registerQuerySuggest();
-    }
-    /**
-     * A unique identifier for the controller.
-     */
-    get id() {
-        return this.options.id;
-    }
-    /**
-     * Updates the search box text value and shows the suggestions for that value.
-     * @param value  The string value to update the search box with.
-     */
-    updateText(value) {
-        this.dispatch(updateQuerySetQuery({ id: this.options.id, query: value }));
-        if (this.options.numberOfSuggestions) {
-            this.showSuggestions();
-        }
-    }
-    /**
-     * Clears the search box text and the suggestions.
-     */
-    clear() {
-        this.dispatch(clearQuerySuggest({ id: this.options.id }));
-    }
-    /**
-     * Clears the suggestions.
-     */
-    hideSuggestions() {
-        this.dispatch(clearQuerySuggestCompletions({ id: this.options.id }));
-    }
-    /**
-     * Shows the suggestions for the current search box value.
-     */
-    showSuggestions() {
-        this.dispatch(fetchQuerySuggestions({ id: this.options.id }));
-    }
-    /**
-     * Selects a suggestion and calls `submit`.
-     * @param value The string value of the suggestion to select
-     */
-    selectSuggestion(value) {
-        this.dispatch(selectQuerySuggestion({ id: this.options.id, expression: value }));
-        this.submit();
-    }
-    /**
-     * If the `standalone` option is `true`, gets the redirection URL.
-     * If the `standalone` option is `false`, triggers a search query.
-     */
-    submit() {
-        this.dispatch(updateQuery({ q: this.state.value }));
-        this.dispatch(updatePage(1));
-        if (this.options.isStandalone) {
-            this.dispatch(checkForRedirection()).then(() => this.dispatch(logTriggerRedirect()));
-            return;
-        }
-        this.dispatch(executeSearch(logSearchboxSubmit()));
-    }
-    /**
-     * @returns The state of the `SearchBox` controller.
-     */
-    get state() {
-        const state = this.engine.state;
-        const querySuggestState = state.querySuggest[this.options.id];
-        return {
-            value: state.querySet[this.options.id],
-            suggestions: querySuggestState.completions.map((completion) => ({
-                value: completion.expression,
-            })),
-            redirectTo: state.redirection.redirectTo,
-        };
-    }
-    registerQuery() {
-        const action = registerQuerySetQuery({ id: this.options.id, query: '' });
-        this.dispatch(action);
-    }
-    registerQuerySuggest() {
-        this.dispatch(registerQuerySuggest({
-            id: this.options.id,
-            q: this.engine.state.query.q,
-            count: this.options.numberOfSuggestions,
-        }));
-    }
-}
+const buildSearchBox = (engine, props = {}) => {
+    const controller = buildController(engine);
+    const { dispatch } = engine;
+    const options = optionsSchema.validate(props.options);
+    dispatch(registerQuerySetQuery({ id: options.id, query: '' }));
+    dispatch(registerQuerySuggest({
+        id: options.id,
+        q: engine.state.query.q,
+        count: options.numberOfSuggestions,
+    }));
+    return {
+        ...controller,
+        /**
+         * A unique identifier for the controller.
+         */
+        get id() {
+            return options.id;
+        },
+        /**
+         * Updates the search box text value and shows the suggestions for that value.
+         * @param value  The string value to update the search box with.
+         */
+        updateText(value) {
+            dispatch(updateQuerySetQuery({ id: options.id, query: value }));
+            if (options.numberOfSuggestions) {
+                this.showSuggestions();
+            }
+        },
+        /**
+         * Clears the search box text and the suggestions.
+         */
+        clear() {
+            dispatch(clearQuerySuggest({ id: options.id }));
+        },
+        /**
+         * Clears the suggestions.
+         */
+        hideSuggestions() {
+            dispatch(clearQuerySuggestCompletions({ id: options.id }));
+        },
+        /**
+         * Shows the suggestions for the current search box value.
+         */
+        showSuggestions() {
+            dispatch(fetchQuerySuggestions({ id: options.id }));
+        },
+        /**
+         * Selects a suggestion and calls `submit`.
+         * @param value The string value of the suggestion to select
+         */
+        selectSuggestion(value) {
+            dispatch(selectQuerySuggestion({ id: options.id, expression: value }));
+            this.submit();
+        },
+        /**
+         * If the `standalone` option is `true`, gets the redirection URL.
+         * If the `standalone` option is `false`, triggers a search query.
+         */
+        submit() {
+            dispatch(updateQuery({ q: this.state.value }));
+            dispatch(updatePage(1));
+            if (options.isStandalone) {
+                dispatch(checkForRedirection()).then(() => dispatch(logTriggerRedirect()));
+                return;
+            }
+            dispatch(executeSearch(logSearchboxSubmit()));
+        },
+        /**
+         * @returns The state of the `SearchBox` controller.
+         */
+        get state() {
+            const state = engine.state;
+            const querySuggestState = state.querySuggest[options.id];
+            return {
+                value: state.querySet[options.id],
+                suggestions: querySuggestState.completions.map((completion) => ({
+                    value: completion.expression,
+                })),
+                redirectTo: state.redirection.redirectTo,
+            };
+        },
+    };
+};
 
 function firstResultSelector(state) {
     return state.pagination.firstResult;
@@ -3480,136 +3740,151 @@ const optionsSchema$1 = new Schema({
     /** The number of pages to display in the pager. */
     numberOfPages: new NumberValue({ default: 5, min: 0 }),
 });
-class Pager extends Controller {
-    constructor(engine, props = {}) {
-        super(engine);
-        this.initOptions(props.options);
-        this.register(props.initialState);
+const buildPager = (engine, props = {}) => {
+    var _a;
+    const controller = buildController(engine);
+    const { dispatch } = engine;
+    const options = optionsSchema$1.validate(props.options);
+    const page = (_a = props.initialState) === null || _a === void 0 ? void 0 : _a.page;
+    if (page) {
+        dispatch(registerPage(page));
     }
-    initOptions(options) {
-        this.options = optionsSchema$1.validate(options);
-    }
-    register(initialState) {
-        const page = initialState === null || initialState === void 0 ? void 0 : initialState.page;
-        if (page) {
-            this.dispatch(registerPage(page));
-        }
-    }
-    /**
-     * Updates the results to those on the passed page.
-     * @param page The page number.
-     */
-    selectPage(page) {
-        this.dispatch(updatePage(page));
-        this.dispatch(executeSearch(logPageNumber()));
-    }
-    /**
-     * Updates the results to those on the next page.
-     */
-    nextPage() {
-        this.dispatch(nextPage());
-        this.dispatch(executeSearch(logPageNext()));
-    }
-    /**
-     * Updates the results to those on the previous page.
-     */
-    previousPage() {
-        this.dispatch(previousPage());
-        this.dispatch(executeSearch(logPagePrevious()));
-    }
-    /**
-     * Returns `true` when a next page is available, and `false` otherwise.
-     */
-    get hasNextPage() {
-        const { currentPage, maxPage } = this.state;
-        return currentPage < maxPage;
-    }
-    /**
-     * Returns `true` when a previous page is available, and `false` otherwise.
-     */
-    get hasPreviousPage() {
-        const { currentPage, maxPage } = this.state;
-        return currentPage > minimumPage && maxPage > 0;
-    }
-    /** Returns `true` when the current page is equal to the current page, and `false` otherwise.
-     * @param page The page number to check.
-     * @returns boolean.
-     */
-    isCurrentPage(page) {
-        return page === this.state.currentPage;
-    }
-    /**
-     * @returns The state of the `Pager` controller.
-     */
-    get state() {
-        return {
-            currentPage: this.currentPage,
-            currentPages: this.currentPages,
-            maxPage: this.maxPage,
-        };
-    }
-    get currentPages() {
-        const { numberOfPages } = this.options;
-        return currentPagesSelector(this.engine.state, numberOfPages);
-    }
-    get currentPage() {
-        return currentPageSelector(this.engine.state);
-    }
-    get maxPage() {
-        return maxPageSelector(this.engine.state);
-    }
-}
+    const currentPage = () => {
+        return currentPageSelector(engine.state);
+    };
+    const currentPages = () => {
+        const { numberOfPages } = options;
+        return currentPagesSelector(engine.state, numberOfPages);
+    };
+    const maxPage = () => {
+        return maxPageSelector(engine.state);
+    };
+    return {
+        ...controller,
+        /**
+         * @returns The state of the `Pager` controller.
+         */
+        get state() {
+            return {
+                currentPage: currentPage(),
+                currentPages: currentPages(),
+                maxPage: maxPage(),
+            };
+        },
+        /**
+         * @returns the current pages range
+         */
+        get currentPages() {
+            return currentPages();
+        },
+        /**
+         * @returns the current selected page
+         */
+        get currentPage() {
+            return currentPage();
+        },
+        /**
+         * @returns the max available page for this query
+         */
+        get maxPage() {
+            return maxPage();
+        },
+        /**
+         * @returns `true` when a previous page is available, and `false` otherwise.
+         */
+        get hasPreviousPage() {
+            const { currentPage, maxPage } = this.state;
+            return currentPage > minimumPage && maxPage > 0;
+        },
+        /**
+         * @returns `true` when a next page is available, and `false` otherwise.
+         */
+        get hasNextPage() {
+            const { currentPage, maxPage } = this.state;
+            return currentPage < maxPage;
+        },
+        /**
+         * Updates the results to those on the passed page.
+         * @param page The page number.
+         */
+        selectPage(page) {
+            dispatch(updatePage(page));
+            dispatch(executeSearch(logPageNumber()));
+        },
+        /**
+         * Updates the results to those on the next page.
+         */
+        nextPage() {
+            dispatch(nextPage());
+            dispatch(executeSearch(logPageNext()));
+        },
+        /**
+         * Updates the results to those on the previous page.
+         */
+        previousPage() {
+            dispatch(previousPage());
+            dispatch(executeSearch(logPagePrevious()));
+        },
+        /**
+         * @returns `true` when the current page is equal to the current page, and `false` otherwise.
+         * @param page The page number to check.
+         * @returns boolean.
+         */
+        isCurrentPage(page) {
+            return page === this.state.currentPage;
+        },
+    };
+};
 
-class ResultList extends Controller {
-    constructor(engine) {
-        super(engine);
-    }
-    /**
-     * @returns The state of the `ResultList` controller.
-     */
-    get state() {
-        const state = this.engine.state;
-        return {
-            results: state.search.response.results,
-        };
-    }
-}
+const buildResultList = (engine) => {
+    const controller = buildController(engine);
+    return {
+        ...controller,
+        /**
+         * @returns The state of the `ResultList` controller.
+         */
+        get state() {
+            const state = engine.state;
+            return {
+                results: state.search.response.results,
+            };
+        },
+    };
+};
 
-class ResultsPerPage extends Controller {
-    constructor(engine, props = {}) {
-        super(engine);
-        this.props = props;
-        this.register();
+const buildResultsPerPage = (engine, props = {}) => {
+    var _a;
+    const controller = buildController(engine);
+    const { dispatch } = engine;
+    const num = (_a = props.initialState) === null || _a === void 0 ? void 0 : _a.numberOfResults;
+    if (num !== undefined) {
+        dispatch(registerNumberOfResults(num));
     }
-    /** Updates the number of results to request
-     * @param number The number of results.
-     */
-    set(num) {
-        this.dispatch(updateNumberOfResults(num));
-        this.dispatch(executeSearch(logPagerResize()));
-    }
-    /** Returns `true` if the number of results is equal to the passed value, and `false` otherwise.
-     * @returns boolean
-     */
-    isSetTo(num) {
-        return num === this.state.numberOfResults;
-    }
-    /**
-     * @returns The state of the `ResultsPerPage` controller.
-     */
-    get state() {
-        return {
-            numberOfResults: this.engine.state.pagination.numberOfResults,
-        };
-    }
-    register() {
-        var _a;
-        const num = (_a = this.props.initialState) === null || _a === void 0 ? void 0 : _a.numberOfResults;
-        if (num !== undefined) {
-            this.dispatch(registerNumberOfResults(num));
-        }
-    }
-}
+    return {
+        ...controller,
+        /**
+         * @returns The state of the `ResultsPerPage` controller.
+         */
+        get state() {
+            return {
+                numberOfResults: engine.state.pagination.numberOfResults,
+            };
+        },
+        /** Updates the number of results to request
+         * @param number The number of results.
+         */
+        set(num) {
+            dispatch(updateNumberOfResults(num));
+            dispatch(executeSearch(logPagerResize()));
+        },
+        /** Returns `true` if the number of results is equal to the passed value, and `false` otherwise.
+         * @returns boolean
+         */
+        isSetTo(num) {
+            return num === this.state.numberOfResults;
+        },
+    };
+};
 
 /**
  * Log results sort
@@ -3665,33 +3940,34 @@ class Sort extends Controller {
     }
 }
 
-class QuerySummary extends Controller {
-    constructor(engine) {
-        super(engine);
-    }
-    /**
-     * @returns The state of the `QuerySummary` controller.
-     */
-    get state() {
-        const state = this.engine.state;
-        return {
-            firstResult: state.pagination.firstResult + 1,
-            lastResult: state.pagination.firstResult + state.search.response.results.length,
-            total: state.pagination.totalCountFiltered,
-            query: state.search.queryExecuted,
-            hasQuery: state.search.queryExecuted !== '',
-            hasDuration: state.search.duration !== 0,
-            hasResults: state.search.response.results.length !== 0,
-            durationInMilliseconds: state.search.duration,
-            durationInSeconds: this.durationInSeconds,
-        };
-    }
-    get durationInSeconds() {
-        const state = this.engine.state;
+const buildQuerySummary = (engine) => {
+    const controller = buildController(engine);
+    const durationInSeconds = () => {
+        const state = engine.state;
         const inSeconds = state.search.duration / 1000;
         return Math.round((inSeconds + Number.EPSILON) * 100) / 100;
-    }
-}
+    };
+    return {
+        ...controller,
+        /**
+         * @returns The state of the `QuerySummary` controller.
+         */
+        get state() {
+            const state = engine.state;
+            return {
+                firstResult: state.pagination.firstResult + 1,
+                lastResult: state.pagination.firstResult + state.search.response.results.length,
+                total: state.pagination.totalCountFiltered,
+                query: state.search.queryExecuted,
+                hasQuery: state.search.queryExecuted !== '',
+                hasDuration: state.search.duration !== 0,
+                hasResults: state.search.response.results.length !== 0,
+                durationInMilliseconds: state.search.duration,
+                durationInSeconds: durationInSeconds(),
+            };
+        },
+    };
+};
 
 const facetSelector = (state, id) => {
     return state.search.response.facets.find((response) => response.facetId === id);
@@ -3792,8 +4068,8 @@ function buildFacet(engine, props) {
             dispatch(executeSearch(analyticsAction));
         },
         /**
-         * Returns `true` is the passed facet value is selected and `false` otherwise.
-         * @param facetValue The facet value to check.
+         * Returns `true` if the passed facet value is selected and `false` otherwise.
+         * @param {FacetValue} The facet value to check.
          * @returns {boolean}.
          */
         isValueSelected,
@@ -3874,125 +4150,168 @@ function buildFacet(engine, props) {
     };
 }
 
-class Context extends Controller {
-    constructor(engine) {
-        super(engine);
-    }
-    /**
-     * @returns The state of the `Context` controller.
-     */
-    get state() {
-        const state = this.engine.state;
-        return {
-            contextValues: state.context.contextValues,
-        };
-    }
-    /**
-     * Set the context for the query. Replace any existing context by the new one.
-     * @param ctx The context to set in the query.
-     */
-    setContext(ctx) {
-        this.dispatch(setContext(ctx));
-    }
-    /**
-     * Add, or replace if already present, a new context key and value pair.
-     * @param key The context key to add.
-     * @param value The context value to add.
-     */
-    addContext(key, value) {
-        this.dispatch(addContext({ contextKey: key, contextValue: value }));
-    }
-    /**
-     * Remove a context key from the query.
-     * @param key The context key to remove.
-     */
-    removeContext(key) {
-        this.dispatch(removeContext(key));
-    }
+const buildContext = (engine) => {
+    const controller = buildController(engine);
+    const { dispatch } = engine;
+    return {
+        ...controller,
+        get state() {
+            return {
+                values: engine.state.context.contextValues,
+            };
+        },
+        /**
+         * Set the context for the query. Replace any existing context by the new one.
+         *  @param ctx The context to set in the query.
+         */
+        set(ctx) {
+            dispatch(setContext(ctx));
+        },
+        /**
+         * Add, or replace if already present, a new context key and value pair.
+         * @param contextKey The context key to add.
+         * @param contextValue The context value to add.
+         */
+        add(contextKey, contextValue) {
+            dispatch(addContext({ contextKey, contextValue }));
+        },
+        /**
+         * Remove a context key from the query.
+         * @param key The context key to remove.
+         */
+        remove(key) {
+            dispatch(removeContext(key));
+        },
+    };
+};
+
+const buildQueryError = (engine) => {
+    const controller = buildController(engine);
+    return {
+        ...controller,
+        get state() {
+            return {
+                hasError: engine.state.search.error !== null,
+                error: engine.state.search.error,
+            };
+        },
+    };
+};
+
+const buildHistory = (engine) => {
+    const controller = buildController(engine);
+    const { dispatch } = engine;
+    return {
+        ...controller,
+        get state() {
+            return engine.state.history;
+        },
+        /**
+         * Move backward in the interface history.
+         */
+        async back() {
+            await dispatch(back());
+            dispatch(executeSearch(logNavigateBackward()));
+        },
+        /**
+         * Move forward in the interface history.
+         */
+        async forward() {
+            await dispatch(forward());
+            dispatch(executeSearch(logNavigateForward()));
+        },
+    };
+};
+
+const buildDidYouMean = (engine) => {
+    const controller = buildController(engine);
+    const { dispatch } = engine;
+    dispatch(enableDidYouMean());
+    return {
+        ...controller,
+        /**
+         * @returns The state of the `DidYouMean` controller.
+         */
+        get state() {
+            const state = engine.state;
+            return {
+                ...state.didYouMean,
+                hasQueryCorrection: state.didYouMean.queryCorrection.correctedQuery !== '' ||
+                    state.didYouMean.wasCorrectedTo !== '',
+            };
+        },
+        /**
+         * Apply query correction using the query correction, if any, currently present in the state.
+         */
+        applyCorrection() {
+            dispatch(didYouMeanCorrection(this.state.queryCorrection.correctedQuery));
+            dispatch(executeSearch(logDidYouMeanClick()));
+        },
+    };
+};
+
+function buildNumericRange(config) {
+    return {
+        endInclusive: false,
+        state: 'idle',
+        ...config,
+    };
+}
+function buildNumericFacet(engine, props) {
+    const controller = buildController(engine);
+    const dispatch = engine.dispatch;
+    const facetId = props.options.facetId || randomID('numericFacet');
+    const options = { facetId, ...props.options };
+    const getResponse = () => {
+        return facetSelector(engine.state, facetId);
+    };
+    const isValueSelected = (selection) => {
+        return selection.state === 'selected';
+    };
+    const getAnalyticsActionForToggleSelect = (selection) => {
+        const { start, end } = selection;
+        const facetValue = `${start}..${end}`;
+        const payload = { facetId, facetValue };
+        return isValueSelected(selection)
+            ? logFacetDeselect(payload)
+            : logFacetSelect(payload);
+    };
+    dispatch(registerNumericFacet(options));
+    return {
+        ...controller,
+        /**
+         * Selects (deselects) the passed value if unselected (selected).
+         * @param selection The facet value to select or deselect.
+         */
+        toggleSelect(selection) {
+            const analyticsAction = getAnalyticsActionForToggleSelect(selection);
+            dispatch(toggleSelectNumericFacetValue({ facetId, selection }));
+            dispatch(executeSearch(analyticsAction));
+        },
+        /** Returns `true` if the passed facet value is selected and `false` otherwise.
+         * @param {RangeFacetValue}
+         * @returns {boolean}
+         * */
+        isValueSelected,
+        /** @returns The state of the `RangeFacet` controller.*/
+        get state() {
+            const response = getResponse();
+            const values = response ? response.values : [];
+            return { values };
+        },
+    };
 }
 
-class QueryError extends Controller {
-    constructor(engine) {
-        super(engine);
-    }
-    /**
-     * @returns The state of the `QueryError` component.
-     */
-    get state() {
-        const state = this.engine.state;
-        return {
-            hasError: state.search.error !== null,
-            error: state.search.error,
-        };
-    }
-}
+const logDocumentOpen = createAsyncThunk('analytics/result/open', async (result, { getState }) => {
+    const state = searchPageState(getState);
+    await configureAnalytics(state).logDocumentOpen(partialDocumentInformation(result, state), documentIdentifier(result));
+    return makeClickActionType();
+});
 
-class History extends Controller {
-    constructor(engine) {
-        super(engine);
-    }
-    /**
-     * @returns The state of the `History` controller.
-     */
-    get state() {
-        const state = this.engine.state.history;
-        return state;
-    }
-    async back() {
-        await this.dispatch(back());
-        this.dispatch(executeSearch(logNavigateBackward()));
-    }
-    async forward() {
-        await this.dispatch(forward());
-        this.dispatch(executeSearch(logNavigateForward()));
-    }
-}
-
-/**
- * The DidYouMean controller is responsible for handling query corrections.
- * When a query returns no result but finds a possible query correction, the controller either suggests the correction or
- * automatically triggers a new query with the suggested term.
- */
-class DidYouMean extends Controller {
-    constructor(engine) {
-        super(engine);
-        this.dispatch(enableDidYouMean());
-    }
-    /**
-     * @returns The state of the `DidYouMean` controller.
-     */
-    get state() {
-        const state = this.engine.state;
-        return {
-            ...state.didYouMean,
-            hasQueryCorrection: state.didYouMean.queryCorrection.correctedQuery !== '' ||
-                state.didYouMean.wasCorrectedTo !== '',
-        };
-    }
-    applyCorrection() {
-        this.dispatch(updateQuery({ q: this.state.queryCorrection.correctedQuery }));
-        this.dispatch(didYouMeanCorrection(this.state.queryCorrection.correctedQuery));
-        this.dispatch(executeSearch(logDidYouMeanClick()));
-    }
-}
-
-class Pipeline extends Controller {
-    constructor(engine) {
-        super(engine);
-    }
-    /**
-     * @returns The state of the `Pipeline` controller.
-     */
-    get state() {
-        const state = this.engine.state;
-        return {
-            pipeline: state.pipeline,
-        };
-    }
-    setPipeline(pipeline) {
-        this.dispatch(setPipeline(pipeline));
-    }
-}
+var resultAnalyticsActions = /*#__PURE__*/Object.freeze({
+	__proto__: null,
+	logDocumentOpen: logDocumentOpen
+});
 
 const prioritySchema = new Schema({
     priority: new NumberValue({ required: false, default: 0, min: 0 }),
@@ -4001,16 +4320,23 @@ const prioritySchema = new Schema({
  * Manager in which result templates can be registered and selected based on a list of conditions and priority.
  */
 class ResultTemplatesManager {
-    constructor() {
+    constructor(engine) {
+        this.engine = engine;
         this.templates = [];
     }
     registerTemplates(...templates) {
+        const fields = [];
         this.validateTemplates(templates);
-        this.templates.push(...templates.map((template) => ({
-            ...template,
-            priority: template.priority || 0,
-        })));
+        templates.forEach((template) => {
+            const templatesWithDefault = {
+                ...template,
+                priority: template.priority || 0,
+                fields: template.fields || [],
+            };
+            this.templates.push(templatesWithDefault);
+        });
         this.templates.sort((a, b) => b.priority - a.priority);
+        this.engine.dispatch(registerFieldsToInclude(fields));
     }
     validateTemplates(templates) {
         templates.forEach((template) => {
@@ -4060,29 +4386,408 @@ var resultTemplatesHelpers = /*#__PURE__*/Object.freeze({
 	fieldMustNotMatch: fieldMustNotMatch
 });
 
-exports.Context = Context;
+function createMockState(config = {}) {
+    return {
+        configuration: getConfigurationInitialState(),
+        facetSet: getFacetSetInitialState(),
+        dateFacetSet: getDateFacetSetInitialState(),
+        numericFacetSet: getNumericFacetSetInitialState(),
+        facetSearchSet: getFacetSearchSetInitialState(),
+        pagination: getPaginationInitialState(),
+        query: getQueryInitialState(),
+        querySet: getQuerySetInitialState(),
+        querySuggest: {},
+        redirection: getRedirectionInitialState(),
+        search: getSearchInitialState(),
+        sortCriteria: getSortCriteriaInitialState(),
+        context: getContextInitialState(),
+        didYouMean: getDidYouMeanInitialState(),
+        fields: getFieldsInitialState(),
+        history: makeHistory(getHistoryEmptyState()),
+        pipeline: getPipelineInitialState(),
+        searchHub: getSearchHubInitialState(),
+        ...config,
+    };
+}
+
+function unwrapExports (x) {
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
+
+function createCommonjsModule(fn, basedir, module) {
+	return module = {
+	  path: basedir,
+	  exports: {},
+	  require: function (path, base) {
+      return commonjsRequire(path, (base === undefined || base === null) ? module.path : base);
+    }
+	}, fn(module, module.exports), module.exports;
+}
+
+function commonjsRequire () {
+	throw new Error('Dynamic requires are not currently supported by @rollup/plugin-commonjs');
+}
+
+/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** `Object#toString` result references. */
+var objectTag = '[object Object]';
+
+/**
+ * Checks if `value` is a host object in IE < 9.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
+ */
+function isHostObject(value) {
+  // Many host objects are `Object` objects that can coerce to strings
+  // despite having improperly defined `toString` methods.
+  var result = false;
+  if (value != null && typeof value.toString != 'function') {
+    try {
+      result = !!(value + '');
+    } catch (e) {}
+  }
+  return result;
+}
+
+/**
+ * Creates a unary function that invokes `func` with its argument transformed.
+ *
+ * @private
+ * @param {Function} func The function to wrap.
+ * @param {Function} transform The argument transform.
+ * @returns {Function} Returns the new function.
+ */
+function overArg(func, transform) {
+  return function(arg) {
+    return func(transform(arg));
+  };
+}
+
+/** Used for built-in method references. */
+var funcProto = Function.prototype,
+    objectProto = Object.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Used to infer the `Object` constructor. */
+var objectCtorString = funcToString.call(Object);
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/** Built-in value references. */
+var getPrototype = overArg(Object.getPrototypeOf, Object);
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+/**
+ * Checks if `value` is a plain object, that is, an object created by the
+ * `Object` constructor or one with a `[[Prototype]]` of `null`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.8.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ * }
+ *
+ * _.isPlainObject(new Foo);
+ * // => false
+ *
+ * _.isPlainObject([1, 2, 3]);
+ * // => false
+ *
+ * _.isPlainObject({ 'x': 0, 'y': 0 });
+ * // => true
+ *
+ * _.isPlainObject(Object.create(null));
+ * // => true
+ */
+function isPlainObject$2(value) {
+  if (!isObjectLike(value) ||
+      objectToString.call(value) != objectTag || isHostObject(value)) {
+    return false;
+  }
+  var proto = getPrototype(value);
+  if (proto === null) {
+    return true;
+  }
+  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
+  return (typeof Ctor == 'function' &&
+    Ctor instanceof Ctor && funcToString.call(Ctor) == objectCtorString);
+}
+
+var lodash_isplainobject = isPlainObject$2;
+
+var lib = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = configureStore;
+
+
+
+
+
+var _lodash2 = _interopRequireDefault(lodash_isplainobject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var isFunction = function isFunction(arg) {
+  return typeof arg === 'function';
+};
+
+function configureStore() {
+  var middlewares = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+  return function mockStore() {
+    var _getState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    function mockStoreWithoutMiddleware() {
+      var actions = [];
+      var listeners = [];
+
+      var self = {
+        getState: function getState() {
+          return isFunction(_getState) ? _getState(actions) : _getState;
+        },
+        getActions: function getActions() {
+          return actions;
+        },
+        dispatch: function dispatch(action) {
+          if (!(0, _lodash2.default)(action)) {
+            throw new Error('Actions must be plain objects. ' + 'Use custom middleware for async actions.');
+          }
+
+          if (typeof action.type === 'undefined') {
+            throw new Error('Actions may not have an undefined "type" property. ' + 'Have you misspelled a constant? ' + 'Action: ' + JSON.stringify(action));
+          }
+
+          actions.push(action);
+
+          for (var i = 0; i < listeners.length; i++) {
+            listeners[i]();
+          }
+
+          return action;
+        },
+        clearActions: function clearActions() {
+          actions = [];
+        },
+        subscribe: function subscribe(cb) {
+          if (isFunction(cb)) {
+            listeners.push(cb);
+          }
+
+          return function () {
+            var index = listeners.indexOf(cb);
+
+            if (index < 0) {
+              return;
+            }
+            listeners.splice(index, 1);
+          };
+        },
+        replaceReducer: function replaceReducer(nextReducer) {
+          if (!isFunction(nextReducer)) {
+            throw new Error('Expected the nextReducer to be a function.');
+          }
+        }
+      };
+
+      return self;
+    }
+
+    var mockStoreWithMiddleware = redux.applyMiddleware.apply(undefined, _toConsumableArray(middlewares))(mockStoreWithoutMiddleware);
+
+    return mockStoreWithMiddleware();
+  };
+}
+});
+
+var configureStore$2 = unwrapExports(lib);
+
+function buildMockEngine(config = {}) {
+    const storeConfiguration = configureMockStore();
+    const store = storeConfiguration(config.state || createMockState());
+    const unsubscribe = () => { };
+    return {
+        store: store,
+        state: createMockState(),
+        subscribe: jest.fn(() => unsubscribe),
+        get dispatch() {
+            return store.dispatch;
+        },
+        get actions() {
+            return store.getActions();
+        },
+        ...config,
+    };
+}
+const configureMockStore = () => {
+    return configureStore$2([
+        analyticsMiddleware,
+        thunk,
+        ...getDefaultMiddleware(),
+    ]);
+};
+
+function buildMockRaw(config = {}) {
+    return {
+        urihash: '',
+        parents: '',
+        sfid: '',
+        sfparentid: '',
+        sfinsertedbyid: '',
+        documenttype: '',
+        sfcreatedbyid: '',
+        permanentid: '',
+        date: 0,
+        objecttype: '',
+        sourcetype: '',
+        sftitle: '',
+        size: 0,
+        sffeeditemid: '',
+        clickableuri: '',
+        sfcreatedby: '',
+        source: '',
+        collection: '',
+        connectortype: '',
+        filetype: '',
+        sfcreatedbyname: '',
+        sflikecount: 0,
+        language: [],
+        ...config,
+    };
+}
+
+function buildMockResult(config = {}) {
+    return {
+        title: '',
+        uri: '',
+        printableUri: '',
+        clickUri: '',
+        uniqueId: '',
+        excerpt: '',
+        firstSentences: '',
+        summary: null,
+        flags: '',
+        hasHtmlVersion: false,
+        hasMobileHtmlVersion: false,
+        score: 0,
+        percentScore: 0,
+        rankingInfo: null,
+        rating: 0,
+        isTopResult: false,
+        isRecommendation: false,
+        isUserActionView: false,
+        titleHighlights: [],
+        firstSentencesHighlights: [],
+        excerptHighlights: [],
+        printableUriHighlights: [],
+        summaryHighlights: [],
+        parentResult: null,
+        childResults: [],
+        totalNumberOfChildResults: 0,
+        absentTerms: [],
+        raw: buildMockRaw(),
+        Title: '',
+        Uri: '',
+        PrintableUri: '',
+        ClickUri: '',
+        UniqueId: '',
+        Excerpt: '',
+        FirstSentences: '',
+        ...config,
+    };
+}
+
+var index = /*#__PURE__*/Object.freeze({
+	__proto__: null,
+	buildMockEngine: buildMockEngine,
+	createMockState: createMockState,
+	buildMockResult: buildMockResult,
+	buildMockRaw: buildMockRaw
+});
+
 exports.Controller = Controller;
-exports.DidYouMean = DidYouMean;
 exports.HeadlessEngine = HeadlessEngine;
-exports.History = History;
-exports.Pager = Pager;
-exports.Pipeline = Pipeline;
-exports.QueryError = QueryError;
-exports.QuerySummary = QuerySummary;
-exports.ResultList = ResultList;
+exports.ResultAnalyticsActions = resultAnalyticsActions;
 exports.ResultTemplatesManager = ResultTemplatesManager;
-exports.ResultsPerPage = ResultsPerPage;
-exports.SearchBox = SearchBox;
 exports.Sort = Sort;
+exports.TestUtils = index;
 exports.analyticsActions = analyticsActions;
 exports.buildCompositeSortCriterion = buildCompositeSortCriterion;
+exports.buildContext = buildContext;
 exports.buildController = buildController;
 exports.buildDateSortCriterion = buildDateSortCriterion;
+exports.buildDidYouMean = buildDidYouMean;
 exports.buildFacet = buildFacet;
 exports.buildFieldSortCriterion = buildFieldSortCriterion;
+exports.buildHistory = buildHistory;
 exports.buildNoSortCriterion = buildNoSortCriterion;
+exports.buildNumericFacet = buildNumericFacet;
+exports.buildNumericRange = buildNumericRange;
+exports.buildPager = buildPager;
+exports.buildQueryError = buildQueryError;
 exports.buildQueryRankingExpressionSortCriterion = buildQueryRankingExpressionSortCriterion;
+exports.buildQuerySummary = buildQuerySummary;
 exports.buildRelevanceSortCriterion = buildRelevanceSortCriterion;
+exports.buildResultList = buildResultList;
+exports.buildResultsPerPage = buildResultsPerPage;
+exports.buildSearchBox = buildSearchBox;
 exports.configurationActions = configurationActions;
 exports.createAction = createAction;
 exports.createAsyncThunk = createAsyncThunk;
@@ -4094,6 +4799,7 @@ exports.facetRequestSelector = facetRequestSelector;
 exports.facetSelector = facetSelector;
 exports.historyActions = historyActions;
 exports.maxPageSelector = maxPageSelector;
+exports.numericFacetActions = numericFacetActions;
 exports.paginationActions = paginationActions;
 exports.pipelineActions = pipelineActions;
 exports.queryActions = queryActions;
@@ -4102,5 +4808,6 @@ exports.querySuggestActions = querySuggestActions;
 exports.redirectionActions = redirectionActions;
 exports.resultTemplatesHelpers = resultTemplatesHelpers;
 exports.searchActions = searchActions;
+exports.searchHubActions = searchHubActions;
 exports.searchPageReducers = searchPageReducers;
 exports.sortCriterionActions = sortCriteriaActions;

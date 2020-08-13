@@ -94,7 +94,7 @@ export default class Searchbox extends LightningElement {
     }
 
     this.e = eng;
-    this.searchBox = new CoveoHeadless.SearchBox(this.e);
+    this.searchBox = CoveoHeadless.buildSearchBox(this.e);
     this.unsubscribe = this.searchBox.subscribe(() => this.updateState());
   }
 

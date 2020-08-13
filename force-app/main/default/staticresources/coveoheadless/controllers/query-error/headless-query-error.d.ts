@@ -1,14 +1,13 @@
 import { Engine } from '../../app/headless-engine';
-import { Controller } from '../controller/headless-controller';
-/** The state relevant to the `QueryError` component.*/
+/**
+ * `QueryError` controller allows to retrieve information about the current error returned by the search API, if any.
+ */
+export declare type QueryError = ReturnType<typeof buildQueryError>;
 export declare type QueryErrorState = QueryError['state'];
-export declare class QueryError extends Controller {
-    constructor(engine: Engine);
-    /**
-     * @returns The state of the `QueryError` component.
-     */
-    get state(): {
+export declare const buildQueryError: (engine: Engine) => {
+    state: {
         hasError: boolean;
         error: import("../../api/search/search-api-error-response").SearchAPIErrorWithStatusCode | null;
     };
-}
+    subscribe: (listener: () => void) => import("redux").Unsubscribe;
+};

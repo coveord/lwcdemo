@@ -28,9 +28,6 @@
             "c/sort": [
                 "sort/sort.js"
             ],
-            "c/pipeline": [
-                "pipeline/pipeline.js"
-            ],
             "c/searchpage": [
                 "searchpage/searchpage.js"
             ],
@@ -42,7 +39,7 @@
     "include": [
         "**/*",
         "../../../../.sfdx/typings/lwc/**/*.d.ts",
-        "../../../../coveo.d.ts",
+        "../../../../coveo.d.ts"
     ],
     "typeAcquisition": {
         "include": [

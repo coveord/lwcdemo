@@ -16,8 +16,12 @@ export declare const updateBasicConfiguration: import("@reduxjs/toolkit").Action
  */
 export declare const updateSearchConfiguration: import("@reduxjs/toolkit").ActionCreatorWithPreparedPayload<[{
     searchApiBaseUrl?: string | undefined;
+    pipeline: string;
+    searchHub: string;
 }], {
     searchApiBaseUrl?: string | undefined;
+    pipeline: string;
+    searchHub: string;
 }, "configuration/updateSearchConfiguration", never, never>;
 /**
  * Renew the accessToken specified in the global headless engine configuration.

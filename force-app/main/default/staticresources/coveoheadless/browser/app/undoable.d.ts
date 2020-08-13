@@ -6,9 +6,7 @@ export interface StateWithHistory<State> {
     future: State[];
 }
 export declare const ActionCreators: {
-    undo: () => import("@reduxjs/toolkit").ActionCreatorWithoutPayload<"@@undoable/UNDO">;
-    redo: () => {
-        type: string;
-    };
+    undo: () => import("@reduxjs/toolkit").ActionCreatorWithoutPayload<string>;
+    redo: () => import("@reduxjs/toolkit").ActionCreatorWithoutPayload<string>;
 };
 export declare const undoable: <State, Action extends AnyAction>(reducer: Reducer<State, AnyAction>, emptyState: State) => (state: StateWithHistory<State> | undefined, action: Action) => StateWithHistory<State>;

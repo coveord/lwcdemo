@@ -1,7 +1,5 @@
 import { Schema, SchemaValues } from '@coveo/bueno';
 import { Engine } from '../../app/headless-engine';
-import { Controller } from '../controller/headless-controller';
-export declare type PagerState = Pager['state'];
 export interface PagerProps {
     options?: PagerOptions;
     initialState?: PagerInitialState;
@@ -14,11 +12,22 @@ export declare type PagerInitialState = {
     /** The initial page number */
     page?: number;
 };
-export declare class Pager extends Controller {
-    private options;
-    constructor(engine: Engine, props?: PagerProps);
-    private initOptions;
-    private register;
+/**
+ * The `Pager` controller allows to navigate through the different result pages.
+ */
+export declare type Pager = ReturnType<typeof buildPager>;
+export declare type PagerState = Pager['state'];
+export declare const buildPager: (engine: Engine, props?: PagerProps) => {
+    state: {
+        currentPage: number;
+        currentPages: number[];
+        maxPage: number;
+    };
+    currentPages: number[];
+    currentPage: number;
+    maxPage: number;
+    hasPreviousPage: boolean;
+    hasNextPage: boolean;
     /**
      * Updates the results to those on the passed page.
      * @param page The page number.
@@ -33,28 +42,11 @@ export declare class Pager extends Controller {
      */
     previousPage(): void;
     /**
-     * Returns `true` when a next page is available, and `false` otherwise.
-     */
-    get hasNextPage(): boolean;
-    /**
-     * Returns `true` when a previous page is available, and `false` otherwise.
-     */
-    get hasPreviousPage(): boolean;
-    /** Returns `true` when the current page is equal to the current page, and `false` otherwise.
+     * @returns `true` when the current page is equal to the current page, and `false` otherwise.
      * @param page The page number to check.
      * @returns boolean.
      */
     isCurrentPage(page: number): boolean;
-    /**
-     * @returns The state of the `Pager` controller.
-     */
-    get state(): {
-        currentPage: number;
-        currentPages: number[];
-        maxPage: number;
-    };
-    private get currentPages();
-    private get currentPage();
-    private get maxPage();
-}
+    subscribe: (listener: () => void) => import("redux").Unsubscribe;
+};
 export {};

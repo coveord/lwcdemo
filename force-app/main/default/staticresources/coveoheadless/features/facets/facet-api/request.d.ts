@@ -4,7 +4,6 @@ export interface BaseFacetRequest {
     field: string;
     filterFacetCount: boolean;
     injectionDepth: number;
-    isFieldExpanded: boolean;
     numberOfValues: number;
     preventAutoSelect: boolean;
 }
@@ -19,6 +18,9 @@ export interface Freezable {
 }
 export interface Delimitable {
     delimitingCharacter: string;
+}
+export interface Expandable {
+    isFieldExpanded: boolean;
 }
 export interface Type<T extends 'specific' | 'dateRange' | 'numericalRange' | 'hierarchical'> {
     type: T;
